@@ -1,0 +1,42 @@
+def quiz_game():
+    # Define the questions, options, and correct answers
+    questions = {
+        "What is the capital of France?": {
+            "options": ["Paris", "London", "Berlin", "Madrid"],
+            "answer": "Paris"
+        },
+        "What is 2 + 2?": {
+            "options": ["3", "4", "5", "6"],
+            "answer": "4"
+        },
+        "What is the capital of Italy?": {
+            "options": ["Rome", "Paris", "Madrid", "Berlin"],
+            "answer": "Rome"
+        },
+        "What is the capital of Spain?": {
+            "options": ["Lisbon", "Madrid", "Rome", "Paris"],
+            "answer": "Madrid"
+        },
+        "What is 3 * 3?": {
+            "options": ["6", "9", "12", "15"],
+            "answer": "9"
+        }
+    }
+
+    score = 0
+    for question, data in questions.items():
+        print(question)
+        for idx, option in enumerate(data["options"], 1):
+            print(f"{idx}. {option}")
+        answer = input("Enter the number of your answer: ")
+        
+        if data["options"][int(answer) - 1] == data["answer"]:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Incorrect! The correct answer is {data['answer']}.")
+
+    print(f"Your final score is {score} out of {len(questions)}")
+
+# Run the quiz game
+quiz_game()

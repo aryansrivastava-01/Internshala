@@ -1,0 +1,38 @@
+def quiz_game():
+    # Define the questions 
+    questions = {
+        "What is the capital of India?": "New Delhi",
+        "What is the name of car br which has logo of its intial L?": "Lexus",
+        "Which city in india is known as diamond city  ?": "Surat",
+        "Which state in india is the largest coal producer?": "Jharkhand",
+        "What is 3 * 7?": "21"
+    }
+
+    
+    score = 0
+
+    # Ask each question to the user
+    for question, correct_answer in questions.items():
+        # Get the user's answer
+        user_answer = input(question + " ") 
+
+        # Check the  answer is correct or not 
+        if user_answer.strip().lower() == correct_answer.lower():
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Incorrect! The correct answer is {correct_answer}.")
+
+    #  it will Provide feedback 
+    print("\nQuiz Over!")
+    print(f"Your final score is: {score}/{len(questions)}")
+
+    if score == len(questions):
+        print("Excellent! You got all the questions right!")
+    elif score >= len(questions) / 2:
+        print("Good job! You got more than half the questions right!")
+    else:
+        print("Better luck next time!")
+
+
+quiz_game()
